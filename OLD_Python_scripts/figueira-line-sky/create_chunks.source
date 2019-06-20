@@ -1,0 +1,12 @@
+head -100 file_list_ORIG.txt > file_list_chunk1.txt
+head -200 file_list_ORIG.txt | tail -100 > file_list_chunk2.txt
+head -300 file_list_ORIG.txt | tail -100 > file_list_chunk3.txt
+head -400 file_list_ORIG.txt | tail -100 > file_list_chunk4.txt
+head -500 file_list_ORIG.txt | tail -100 > file_list_chunk5.txt
+head -600 file_list_ORIG.txt | tail -100 > file_list_chunk6.txt
+head -700 file_list_ORIG.txt | tail -100 > file_list_chunk7.txt
+head -800 file_list_ORIG.txt | tail -100 > file_list_chunk8.txt
+head -900 file_list_ORIG.txt | tail -100 > file_list_chunk9.txt
+head -1000 file_list_ORIG.txt | tail -100 > file_list_chunk10.txt
+tail -99 file_list_ORIG.txt > file_list_chunk11.txt
+

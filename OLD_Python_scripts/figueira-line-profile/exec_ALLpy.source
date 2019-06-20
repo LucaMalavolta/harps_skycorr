@@ -1,0 +1,13 @@
+rm -r  results
+mkdir results
+cp  file_list_chunk1.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk2.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk3.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk4.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk5.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk6.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk7.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk8.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk9.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk10.txt file_list.txt  & python LineProf.py
+cp  file_list_chunk11.txt file_list.txt  & python LineProf.py

@@ -1,0 +1,4 @@
+# Wrap-up of Multi-hypothesis Testing correction.
+#	 Indicator 	 p-value 	 sidak-values 	 q-value
+	BIS		0.015694	0.0313855369836	0.015694
+	FWHM		0.953092	1.8971001564	1.906184

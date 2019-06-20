@@ -1,0 +1,3 @@
+# Wrap-up of Multi-hypothesis Testing correction.
+#	 Indicator 	 p-value 	 sidak-values 	 q-value
+	FWHM		46.93172	46.93172	46.93172
