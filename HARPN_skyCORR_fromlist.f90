@@ -57,7 +57,8 @@ character (len = nch_file) :: arch_red, opt_in
    write(*,*) ' 4) calibration directory'
    write(*,*) ' 5) use the date to search for calibration files'
    write(*,*) ' 6) output directory'
-   write(*,*) ' 7) optional: use wave_A for fiber B as well, T o F allowed'
+   write(*,*) ' 7) use the date for the output directory'
+   write(*,*) ' 8) optional: use wave_A for fiber B as well, T o F allowed'
    stop
  end if
 
@@ -105,8 +106,17 @@ character (len = nch_file) :: arch_red, opt_in
 
    call fits_check(file_ccf_B,sts_out)
    write(*,*) sts_out
-   if (sts_out.eq.0) cycle
-
+   if (sts_out.eq.0) then
+     if (date_output.eq.1) then
+         call system('mkdir -p ' // trim(output_dir) // '/' // trim(file_date) )
+         call system('cp ' // trim(file_ccf_A) // ' ' //  trim(output_dir) // '/' // trim(file_date) // '/')
+     else
+         call system('mkdir -p ' // trim(output_dir))
+         call system('cp ' // trim(file_ccf_A) // ' ' //  trim(output_dir) // '/' )
+     end if
+     write(*,*) 'File copied: ',  trim(file_ccf_A)
+     cycle
+   end if
 
    call fits_actv(lun_fits,file_ccf_A)
    call singleheader_BLAZE (lun_fits,file_blaze,io_stat)
