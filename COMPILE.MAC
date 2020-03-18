@@ -8,6 +8,10 @@ gfortran -O2 -funroll-loops  -c fits.f90
 gfortran -O2 -funroll-loops  -c filepaths.f90
 gfortran -O2 -funroll-loops  -c instrument_harpn.f90
 gfortran -O2 -funroll-loops  -c instrument_harps.f90
-gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPN_skyCORR.f90 -o HARPN_skyCORR.e -L ../others/cfitsio/lib -lcfitsio -lm
-gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPS_skyCORR.f90 -o HARPS_skyCORR.e -L ../others/cfitsio/lib -lcfitsio -lm
+gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPN_skyCORR.f90 -o HARPN_skyCORR.e -L ../others/cfitsio/lib -lcfitsio -lcurl -lm
+gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPS_skyCORR.f90 -o HARPS_skyCORR.e -L ../others/cfitsio/lib -lcfitsio -lcurl -lm
+gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPN_skyCORR_fromlist.f90 -o HARPN_skyCORR_fromlist.e -L ../others/cfitsio/lib -lcfitsio -lcurl -lm
+#gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPN_skyCORR.f90 -o HARPN_skyCORR.e -clfitsio -lm
+#gfortran -O2 -funroll-loops -fexpensive-optimizations *.o -J ./ HARPS_skyCORR.f90 -o HARPS_skyCORR.e -lcfitsio -lm
 cp HARP?_skyCORR.e ../bin/
+cp HARP?_skyCORR_fromlist.e ../bin/
